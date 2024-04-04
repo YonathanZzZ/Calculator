@@ -58,7 +58,14 @@ const Calculator = () => {
         }
 
         dispatch(calculatorActions.updateExpression(newExpression));
-        addButtonToHistory(buttonPressed);
+
+        if(buttonPressed !== '='){
+            console.log('button pressed: ', buttonPressed);
+            addButtonToHistory(buttonPressed);
+        }else{
+            addButtonToHistory(newExpression);
+        }
+
     }
 
     return (
