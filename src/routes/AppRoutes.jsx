@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
+import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 import LoginPage from '../components/login/LoginPage.jsx';
 import {useSelector} from "react-redux";
 import MainPage from '../components/MainPage.jsx';
@@ -10,7 +10,7 @@ const AppRoutes = () => {
     const isLoggedIn = useSelector(state => state.user.isLoggedIn);
 
     return (
-        <Router>
+        <BrowserRouter basename={import.meta.env.DEV ? '/' : '/Calculator'}>
             <Routes>
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/" element={isLoggedIn ? <MainPage /> : <Navigate to="/login" />}>
@@ -19,7 +19,7 @@ const AppRoutes = () => {
                 </Route>
                 <Route path="*" element={<Navigate to="/" />} />
             </Routes>
-        </Router>
+        </BrowserRouter>
     );
 };
 
