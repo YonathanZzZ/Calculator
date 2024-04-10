@@ -1,5 +1,7 @@
 # React Calculator App
 
+[Visit the deployed app here](https://yonathanzzz.github.io/Calculator)
+
 ## Features
 
 - **Calculator Functionality**: Perform basic arithmetic operations such as addition, subtraction, multiplication, and division.
