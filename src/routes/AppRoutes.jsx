@@ -5,12 +5,13 @@ import {useSelector} from "react-redux";
 import MainPage from '../components/MainPage.jsx';
 import Calculator from "../components/calculator/Calculator.jsx";
 import History from "../components/History.jsx";
+import {history} from "./history.jsx";
 
 const AppRoutes = () => {
     const isLoggedIn = useSelector(state => state.user.isLoggedIn);
 
     return (
-        <Router>
+        <Router history={history}>
             <Routes>
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/" element={isLoggedIn ? <MainPage /> : <Navigate to="/login" />}>
