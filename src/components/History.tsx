@@ -1,9 +1,10 @@
 import {useDispatch, useSelector} from "react-redux";
 import {Box, Button, List, ListItem, ListItemText} from "@mui/material";
 import {calculatorActions} from '../redux/calculatorSlice.jsx';
+import {RootState} from "../redux/store.tsx";
 
 const History = () => {
-    const history = useSelector(state => state.calculator.history);
+    const history = useSelector((state: RootState) => state.calculator.history);
     const dispatch = useDispatch();
 
     const handleClearHistory = () => {

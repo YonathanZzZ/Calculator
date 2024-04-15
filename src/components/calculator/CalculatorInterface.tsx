@@ -1,7 +1,12 @@
 import {Grid} from "@mui/material";
 import CalculatorButton from "./CalculatorButton.jsx";
 
-const CalculatorInterface = ({handleButton, width}) => {
+interface Props{
+    handleButton: Function;
+    width: number;
+}
+
+const CalculatorInterface = ({handleButton, width}: Props) => {
     const calculatorButtons = ['7', '8', '9', '*', '4', '5', '6', '/', '1', '2', '3', '+', '0', '', '=', '-'];
     const COLUMNS_IN_ROW = 12; //A property of MUI Grid
     const BUTTONS_IN_ROW = 4;

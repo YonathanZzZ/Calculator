@@ -1,6 +1,13 @@
 import {Button} from "@mui/material";
 
-const TabButton = ({tabId, label, activeTab, handleTabChange}) => {
+interface TabButtonProps {
+    tabId: number;
+    label: string;
+    activeTab: number;
+    handleTabChange: Function;
+}
+
+const TabButton = ({tabId, label, activeTab, handleTabChange} : TabButtonProps) => {
     const ACTIVE_TAB_COLOR = '#95bcf2';
     const INACTIVE_TAB_COLOR = '#FFFFFF';
 

@@ -4,16 +4,17 @@ import Display from "./Display.jsx";
 import ResetButton from "./ResetButton.jsx";
 import CalculatorInterface from "./CalculatorInterface.jsx";
 import {calculatorActions} from "../../redux/calculatorSlice.jsx";
+import {RootState} from "../../redux/store.tsx";
 
 const Calculator = () => {
     const MAX_HISTORY_SIZE = 20;
     const dispatch = useDispatch();
-    const history = useSelector(state => state.calculator.history);
-    const expression = useSelector(state => state.calculator.expression);
+    const history = useSelector((state: RootState) => state.calculator.history);
+    const expression = useSelector((state: RootState) => state.calculator.expression);
     const WIDTH = 350; //calculator width in pixels
     const ERROR_EXPRESSION = 'Invalid expression';
 
-    const addButtonToHistory = (buttonPressed) => {
+    const addButtonToHistory = (buttonPressed: string) => {
         const updatedHistory = [...history, buttonPressed];
 
         if (updatedHistory.length > MAX_HISTORY_SIZE) {
@@ -41,7 +42,7 @@ const Calculator = () => {
         dispatch(calculatorActions.resetCalculator());
     }
 
-    const handleButton = (buttonPressed) => {
+    const handleButton = (buttonPressed: string) => {
         //if previous calculation resulted in error, clear the expression
         let newExpression = expression === ERROR_EXPRESSION ? "" : expression;
 

@@ -4,9 +4,10 @@ import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
 import User from "./User.jsx";
 import {userActions} from "../../redux/userSlice.jsx";
+import {RootState} from "../../redux/store.tsx";
 
 const Header = () => {
-    const username = useSelector(state => state.user.username);
+    const username = useSelector((state: RootState) => state.user.username);
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const handleLogout = () => {

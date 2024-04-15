@@ -1,17 +1,24 @@
-import {createSlice} from "@reduxjs/toolkit";
+import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+
+interface CalculatorState{
+    history: string[];
+    expression: string;
+}
+
+const initialState: CalculatorState = {
+    history: [],
+    expression: "",
+};
 
 const calculatorSlice = createSlice({
     name: 'calculator',
-    initialState: {
-        history: [],
-        expression: "",
-    },
+    initialState: initialState,
     reducers: {
-        updateHistory: (state, action) => {
+        updateHistory: (state, action: PayloadAction<string[]>) => {
             state.history = action.payload;
         },
 
-        updateExpression: (state, action) => {
+        updateExpression: (state, action: PayloadAction<string>) => {
             state.expression = action.payload;
         },
 

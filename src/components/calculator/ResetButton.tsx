@@ -1,6 +1,10 @@
 import {Box, Button} from "@mui/material";
 
-const ResetButton = ({handleOnClick}) => {
+interface Props{
+    handleOnClick: () => void;
+}
+
+const ResetButton = ({handleOnClick}: Props) => {
     return(
         <Box justifyContent="center" alignItems="center">
             <Button variant="outlined" onClick={handleOnClick}>

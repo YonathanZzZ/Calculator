@@ -1,9 +1,13 @@
 import {Box} from "@mui/material";
 
-const HelloMessage = ({username}) => {
+interface HelloMessageProps{
+    username: string;
+}
 
-    const capitalizeName = (string) => {
-        return string.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+const HelloMessage = ({username}: HelloMessageProps) => {
+
+    const capitalizeName = (name: string) => {
+        return name.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
     }
 
     return (

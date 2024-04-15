@@ -1,7 +1,10 @@
 import {Button} from "@mui/material";
-import React from "react";
 
-const LogoutButton = ({onClick}) => {
+interface LogoutButtonProps {
+    onClick: () => void;
+}
+
+const LogoutButton = ({onClick}: LogoutButtonProps) => {
     const handleOnClick = () => {
         onClick();
     }

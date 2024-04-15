@@ -1,6 +1,11 @@
 import {Box, Button} from "@mui/material";
 
-const CalculatorButton = ({value, handleButton}) => (
+interface Props{
+    value: string;
+    handleButton: Function;
+}
+
+const CalculatorButton = ({value, handleButton}: Props) => (
     <Box>
         <Button variant='contained' onClick={() => handleButton(value)}>{value}</Button>
     </Box>

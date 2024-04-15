@@ -3,7 +3,7 @@ import {Box, Button, Stack} from "@mui/material";
 import isEmail from "validator/es/lib/isEmail.js";
 import {useNavigate} from "react-router-dom";
 import LabeledInputField from "./LabeledInputField.jsx";
-import {useState} from "react";
+import React, {useState} from "react";
 import {userActions} from "../../redux/userSlice.jsx";
 
 const LoginPage = () => {
@@ -13,11 +13,11 @@ const LoginPage = () => {
     const [inputErrors, setInputErrors] = useState({username: "", email: ""});
     const navigate = useNavigate();
 
-    const handleUsernameChange = (event) => {
+    const handleUsernameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setUsernameInput(event.target.value);
     };
 
-    const handleEmailChange = (event) => {
+    const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setEmailInput(event.target.value);
     }
 
@@ -56,13 +56,12 @@ const LoginPage = () => {
             return;
         }
 
-        //no authentication required
         dispatch(userActions.login({email: emailInput, username: usernameInput}));
 
         navigate("/");
     }
 
-    const handleKeyDown = (e) => {
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.code === "Enter") {
             handleLogin();
         }

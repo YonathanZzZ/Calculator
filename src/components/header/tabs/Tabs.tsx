@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {Stack} from '@mui/material';
 import constants from '../../../constants.jsx';
 import {useNavigate} from "react-router-dom";
@@ -13,7 +13,7 @@ const Tabs = () => {
         [constants.HISTORY_TAB]: '/history'
     };
 
-    const handleTabChange = (tabIndex) => {
+    const handleTabChange = (tabIndex: number) => {
         setActiveTab(tabIndex);
         navigate(tabToPath[tabIndex]);
     };

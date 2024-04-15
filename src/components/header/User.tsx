@@ -2,7 +2,12 @@ import {Box} from "@mui/material";
 import LogoutButton from "./LogoutButton.jsx";
 import HelloMessage from "./HelloMessage.jsx";
 
-const User = ({handleLogout, username}) => {
+interface UserProps {
+    handleLogout: () => void;
+    username: string;
+}
+
+const User = ({handleLogout, username}: UserProps) => {
     return(
         <Box display='flex' justifyContent='right'>
             <Box marginRight={1}>
