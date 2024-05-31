@@ -24,7 +24,6 @@ const calculatorSlice = createSlice({
 
         resetCalculator: (state) => {
             state.expression = "";
-            state.history = [];
         },
     }
 });

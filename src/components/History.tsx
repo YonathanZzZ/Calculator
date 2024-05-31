@@ -24,7 +24,7 @@ const History = () => {
             </Box>
 
             <Box alignSelf="center" marginBottom={1}>
-                <Button onClick={handleClearHistory}>Clear History</Button>
+                <Button onClick={handleClearHistory} disabled={history.length === 0}>Clear History</Button>
             </Box>
         </Box>
     );
